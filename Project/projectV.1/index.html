@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Holistic Demo4</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- เพิ่มไอคอนที่นี่ -->
+    <link rel="icon" href="favicon.ico.ico" type="image/x-icon">
+</head> 
+<body>
+    <div class="container">
+        <video class="input_video" autoplay></video> <!-- ตั้งค่าให้เล่นอัตโนมัติ -->
+        <div class="canvas-container">
+            <canvas class="output_canvas" width="1280" height="720"></canvas> <!-- กำหนดขนาดของ canvas -->
+        </div>
+    </div>
+    <div class="control-panel"></div>
+
+    <!-- แสดงผลข้อความ -->
+    <div id="outputText" style="color: rgb(174, 206, 217); font-size: 30px; position: absolute; top: 10px; left: 10px;"></div>
+
+    <!-- โหลด MediaPipe Holistic -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@latest/holistic.js"></script>
+
+    <!-- โหลด Camera Utilities -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- โหลด TensorFlow JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+
+    <!-- โหลด DeviceDetector (เชื่อมจาก Skypack) -->
+    <script type="module">
+      import DeviceDetector from "https://cdn.skypack.dev/device-detector-js@2.2.10";
+
+      function testSupport(supportedDevices) {
+        const deviceDetector = new DeviceDetector();
+        const detectedDevice = deviceDetector.parse(navigator.userAgent);
+        if (!supportedDevices.some(device => new RegExp(`^${device.client}$`).test(detectedDevice.client.name))) {
+          alert(`This demo, running on ${detectedDevice.client.name}, is not well supported.`);
+        }
+      }
+
+      testSupport([{ client: "Chrome" }]);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+
+    <!-- โหลด JS ของคุณ -->
+    <script type="module" src="app.js"></script> 
+</body>
+</html>

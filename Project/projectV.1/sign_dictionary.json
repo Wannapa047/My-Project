@@ -1,0 +1,528 @@
+[
+  {
+    "word": "ลบ",
+    "meaning": "การนำออก หรือลดจำนวน",
+    "conditions": [
+      "distance(middleRight, indexRight) < 0.03",
+      "distance(ringRight, middleRight) < 0.03",
+      "distance(pinkyRight, ringRight) < 0.03",
+      "indexRight.y > 0.5",
+      "indexRight.x < wristRight.x",
+      "distance(indexRight, leftShoulder) < 0.2",
+      "palmRightDown == true",
+      "distance(thumbRight, pinkyRight) > 0.06",
+
+      "!distance(middleRight, nose) < 0.1",
+      "!middleRight.y < nose.y",
+      "!palmRightDown == false"
+    ]
+  },
+  {
+    "word": "รัก",
+    "meaning": "ความรู้สึกผูกพันหรือชื่นชมต่อบุคคลหรือสิ่งของ",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.1",
+      "distance(thumbRight, pinkyRight) > 0.1",
+      "distance(indexRight, pinkyRight) > 0.1",
+      "distance(middleRight, ringRight) < 0.05",
+      "palmRightDown == false",
+      "middleRight.y < indexRight.y",
+      "ringRight.y < indexRight.y",
+  
+      "!distance(thumbLeft, indexLeft) > 0.05",
+      "!distance(thumbLeft, middleLeft) > 0.05",
+      "!distance(thumbLeft, ringLeft) > 0.05",
+      "!distance(thumbLeft, pinkyLeft) > 0.05",
+  
+      "wristRight.x < 0.5"
+    ]
+  },
+  {
+    "word": "มาก",
+    "meaning": "ท่ามือนี้ใช้กับสิ่งที่จับต้องได้ มองเห็นได้ เช่น มีแตงโมมาก มีแมวมาก",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.1",
+      "distance(thumbRight, middleRight) > 0.1",
+      "distance(thumbRight, ringRight) > 0.1",
+      "distance(thumbRight, pinkyRight) > 0.1",
+      "distance(thumbLeft, indexLeft) > 0.1",
+      "distance(thumbLeft, middleLeft) > 0.1",
+      "distance(thumbLeft, ringLeft) > 0.1",
+      "distance(thumbLeft, pinkyLeft) > 0.1",
+  
+      "abs(wristLeft.x - wristRight.x) > 0.3",
+  
+      "wristLeft.x < 0.4",
+      "wristRight.x > 0.6",
+      "abs(wristLeft.y - wristRight.y) < 0.2",
+      "abs(wristLeft.z - wristRight.z) < 0.2",
+  
+      "!distance(middleRight, nose) < 0.1",
+      "!palmRightDown == true",
+      "!distance(wristRight, mouthCenter) < 0.15"
+    ]
+  },
+  {
+    "word": "น้อย",
+    "meaning": "ไม่มาก, ไม่หนาแน่น.",
+    "conditions": [
+      "distance(thumbRight, pinkyRight) < 0.04",
+      "distance(thumbRight, indexRight) > 0.05",
+      "distance(thumbRight, middleRight) > 0.05",
+      "distance(thumbRight, ringRight) > 0.05",
+      "indexRight.y > wristRight.y",
+      "middleRight.y > wristRight.y",
+      "ringRight.y > wristRight.y",
+      "palmRight.z < wristRight.z",
+      "wristRight.y > 0.4",
+      "wristRight.x > 0.3",
+      "wristRight.x < 0.7",
+  
+      "!distance(thumbLeft, indexLeft) > 0.05",
+      "!distance(thumbLeft, middleLeft) > 0.05",
+      "!distance(thumbLeft, ringLeft) > 0.05",
+      "!distance(thumbLeft, pinkyLeft) > 0.05",
+      "!wristLeft.x < 0.4",
+      "!wristRight.x > 0.6"
+    ]
+  },  
+  {
+    "word": "แมว",
+    "meaning": "สัตว์เลี้ยงที่มีลักษณะขนปุกปุย มีหูตั้งและชอบลับเลียตัวเอง",
+    "conditions": [
+      "distance(thumbLeft, indexLeft) < 0.04",
+      "distance(thumbRight, indexRight) < 0.04",
+
+      "distance(thumbLeft, middleLeft) > 0.05",
+      "distance(thumbLeft, ringLeft) > 0.05",
+      "distance(thumbLeft, pinkyLeft) > 0.05",
+  
+      "distance(thumbRight, middleRight) > 0.05",
+      "distance(thumbRight, ringRight) > 0.05",
+      "distance(thumbRight, pinkyRight) > 0.05",
+
+      "distance(indexLeft, nose) < 0.1",
+      "indexLeft.x < nose.x",
+      "indexLeft.y < nose.y",
+
+      "distance(indexRight, nose) < 0.1",
+      "indexRight.x > nose.x",
+      "indexRight.y < nose.y",
+  
+      "palmLeftDown == false",
+      "palmRightDown == false",
+  
+      "!distance(thumbRight, pinkyRight) > 0.1",
+      "!distance(thumbLeft, pinkyLeft) > 0.1",
+      "!abs(wristLeft.x - wristRight.x) > 0.3",
+      "!wristLeft.x < 0.4",
+      "!wristRight.x > 0.6"
+    ]
+  },
+  {
+    "word": "กิน",
+    "meaning": "นำอาหารหรือเครื่องดื่มเข้าปากและกลืน",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",
+      "distance(thumbRight, middleRight) < 0.05",
+      "distance(thumbRight, ringRight) < 0.05",
+      "distance(thumbRight, pinkyRight) < 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+  
+      "distance(indexRight, mouthCenter) < 0.07",
+      "distance(wristRight, mouthCenter) < 0.1",
+      "wristRight.y < mouthCenter.y",
+      "indexRight.y < mouthCenter.y",
+  
+      "indexRight.x > nose.x",
+      "middleRight.y > indexRight.y",
+      "distance(middleRight, nose) > 0.08",
+      "palmRightDown == false",
+  
+      "thumbRight.y > indexRight.y",
+      "distance(thumbRight, indexRight) < 0.04",
+      "distance(indexRight, ringRight) < 0.05",
+
+      "!distance(middleRight, ringRight) > 0.06",
+      "!distance(indexRight, wristRight) > 0.1",
+      "!indexRight.y > wristRight.y",
+  
+      "!distance(thumbLeft, indexLeft) < 0.1",
+      "!distance(thumbLeft, pinkyLeft) < 0.1",
+      "!distance(indexLeft, mouthCenter) < 0.1",
+      "!distance(pinkyLeft, ringLeft) < 0.03",
+      "!middleLeft.x < nose.x",
+      "!middleLeft.y < nose.y",
+      "!palmLeftDown == false"
+    ]
+  },
+  {
+    "word": "ผู้ชาย",
+    "meaning": "ผู้ชาย",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+      "distance(thumbLeft, indexLeft) > 0.05",
+      "distance(indexLeft, middleLeft) < 0.05",
+      "distance(middleLeft, ringLeft) < 0.05",
+      "distance(ringLeft, pinkyLeft) < 0.05",
+      "palmRightDown",
+      "palmLeftDown",
+      "wristRight.y < 0.5",
+      "wristLeft.y < 0.5",
+      "distance(nose, mouthCenter) < 0.1",
+      "middleRight.y < nose.y",
+      "middleLeft.y < nose.y",
+      "distance(indexRight, nose) < 0.1",
+      "distance(indexLeft, nose) < 0.1",
+      
+      "!distance(wristLeft, wristRight) < 0.1",  
+      "!distance(pinkyRight, ringRight) > 0.1",  
+      "!palmRightDown == false"
+    ]
+  },
+  {
+    "word": "แพ้",
+    "meaning": "แสดงถึงการพ่ายแพ้หรือไม่ชนะ",
+    "conditions": [
+      "distance(thumbLeft, indexLeft) < 0.05",
+      "distance(thumbLeft, middleLeft) < 0.05",
+      "distance(thumbLeft, ringLeft) < 0.05",
+      "distance(thumbLeft, pinkyLeft) > 0.04",
+      "pinkyLeft.y < wristLeft.y",
+      "indexLeft.y > wristLeft.y",
+      "middleLeft.y > wristLeft.y",
+      "ringLeft.y > wristLeft.y",
+  
+      "distance(indexRight, nose) > 0.15",
+      "distance(indexRight, mouthCenter) > 0.15",
+      "palmRightDown == true",
+  
+      "!distance(pinkyRight, ringRight) < 0.1",
+      "!distance(indexRight, mouthCenter) < 0.1",
+      "!distance(wristRight, mouthCenter) < 0.2",
+      "!palmRightDown == false",
+      
+      "!middleRight.y < nose.y",  
+      "!distance(indexRight, nose) < 0.1"
+    ]
+  },
+  {
+    "word": "สีฟ้า",
+    "meaning": "สีที่มีลักษณะเป็นสีฟ้าที่มีความอ่อนหรือสว่าง",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.04",
+      "distance(middleRight, ringRight) > 0.07",
+      "distance(ringRight, pinkyRight) > 0.07",
+      "distance(indexRight, middleRight) > 0.05",
+      "distance(thumbRight, middleRight) > 0.05",
+      "indexRight.y < wristRight.y",
+      "thumbRight.y < indexRight.y",
+      "wristRight.x < 0.5",  
+      "wristRight.y < 0.4",  
+      "palmRightDown == false",
+  
+      "!distance(indexLeft, nose) < 0.15",
+      "!distance(indexRight, nose) < 0.15",
+      "!distance(thumbRight, pinkyRight) < 0.05",
+      "!distance(indexRight, middleRight) < 0.04",
+      "!distance(middleRight, ringRight) < 0.04",
+      "!palmLeftDown == false",
+      "!distance(wristRight, mouthCenter) < 0.2",
+      "!distance(middleRight, ringRight) < 0.05",
+      "!distance(pinkyRight, indexRight) > 0.08"
+    ]
+  },
+  {
+    "word": "หนาว",
+    "meaning": "อาการรู้สึกเย็นหรือสั่นเนื่องจากอุณหภูมิต่ำ",
+    "conditions": [
+      "distance(indexRight, middleRight) < 0.03",
+      "distance(middleRight, ringRight) < 0.03",
+      "distance(ringRight, pinkyRight) < 0.03",
+      "distance(thumbRight, indexRight) < 0.05",
+  
+      "distance(indexLeft, middleLeft) < 0.03",
+      "distance(middleLeft, ringLeft) < 0.03",
+      "distance(ringLeft, pinkyLeft) < 0.03",
+      "distance(thumbLeft, indexLeft) < 0.05",
+  
+      "abs(wristRight.x - shoulderRight.x) < 0.07",
+      "abs(wristRight.y - shoulderRight.y) < 0.07",
+  
+      "abs(wristLeft.x - shoulderLeft.x) < 0.07",
+      "abs(wristLeft.y - shoulderLeft.y) < 0.07",
+  
+      "distance(wristLeft, wristRight) > 0.15",
+  
+      "!distance(indexRight, mouthCenter) < 0.1",
+      "!distance(wristRight, mouthCenter) < 0.1"
+    ]
+  },
+  {
+    "word": "อะไร",
+    "meaning": "ใช้ถามหรือขอข้อมูลเกี่ยวกับสิ่งที่ไม่รู้",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",                 
+      "indexRight.y < wristRight.y",                              
+      "distance(indexRight, middleRight) > 0.07",                 
+      "distance(middleRight, ringRight) < 0.03",                  
+      "distance(ringRight, pinkyRight) < 0.03",                   
+      "wristRight.x < 0.5",                                       
+      "wristRight.y > 0.5",                                       
+      "indexRight.x < 0.5",                                       
+      "indexRight.y < middleRight.y",                             
+      "distance(indexRight, pinkyRight) > 0.08"                   
+    ]
+  },  
+  {
+    "word": "อะไร",
+    "meaning": "คำถามที่ใช้เมื่อไม่รู้หรือสงสัย",
+    "conditions": [
+      "distance(indexRight, thumbRight) < 0.05",
+      "distance(indexRight, middleRight) > 0.07",
+      "distance(middleRight, ringRight) > 0.07",
+      "indexRight.y < nose.y",
+      "indexRight.x > nose.x",
+      "distance(indexRight, nose) < 0.1",
+      "palmRightDown == false",
+      "wristRight.x > 0.6",
+      "wristRight.y < 0.5",
+      "distance(indexRight, leftShoulder) > 0.3",  
+      
+      "!distance(indexRight, mouthCenter) < 0.1",
+      "!palmRightDown == true",
+      "!distance(middleRight, ringRight) < 0.05"
+    ]
+  },
+  {
+    "word": "ส้ม",
+    "meaning": "ผลไม้สีส้ม รสเปรี้ยวหวาน",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+  
+      "distance(indexRight, chin) < 0.08",
+      "wristRight.y < chin.y",
+      "palmRightDown == false",
+  
+      "!distance(indexRight, nose) < 0.07",
+      "!distance(indexLeft, chin) < 0.15",
+      "!palmLeftDown == false"
+    ]
+  },
+  {
+    "word": "หัวหน้า",
+    "meaning": "ผู้เป็นใหญ่ในหมู่หนึ่ง ๆ.",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.1",
+      "distance(thumbRight, middleRight) > 0.1",
+      "distance(thumbRight, ringRight) > 0.1",
+      "distance(thumbRight, pinkyRight) > 0.1",
+      "distance(thumbRight, wristRight) < 0.1",
+      "distance(thumbLeft, wristLeft) < 0.1",
+      "distance(thumbRight, wristLeft) < 0.1",
+      "distance(indexLeft, pinkyLeft) < 0.05",
+      "distance(indexLeft, indexRight) < 0.05",
+      "distance(wristRight, wristLeft) < 0.1",
+      "wristRight.y < wristLeft.y"
+    ]
+  },
+  {
+    "word": "โอเค",
+    "meaning": "แสดงความยอมรับหรือเห็นด้วย",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",
+      "distance(thumbRight, middleRight) < 0.05",
+      "distance(thumbRight, ringRight) < 0.05",
+      "distance(thumbRight, pinkyRight) < 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+      "distance(indexRight, pinkyRight) < 0.05",
+      "distance(wristRight, wristLeft) > 0.3",
+      "distance(indexLeft, indexRight) > 0.3" ,
+      "!distance(indexRight, mouthCenter) < 0.1",  
+      "!wristRight.y < mouthCenter.y",            
+      "!indexRight.y < mouthCenter.y",
+      "!(distance(rightHandCenter, nose) < 0.1 || distance(rightIndexTip, mouth) < 0.1 || distance(rightThumbTip, mouth) < 0.1)"               
+
+    ]
+  },
+  {
+    "word": "ขอโทษ",
+    "meaning": "แสดงความเสียใจหรือสำนึกผิด",
+    "conditions": [
+      "distance(palmRight, chestCenter) < 0.1",
+      "palmRightDown == true",
+      "wristRight.y > chestCenter.y",
+      "indexRight.y > wristRight.y",
+      "middleRight.y > wristRight.y",
+      "ringRight.y > wristRight.y",
+      "pinkyRight.y > wristRight.y",
+      "distance(thumbRight, indexRight) < 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+      "!distance(palmLeft, chestCenter) < 0.1",
+      "!palmLeftDown == true"
+    ]
+  },
+  {
+    "word": "ขอโทษ",
+    "meaning": "การแสดงความเสียใจหรือขออภัย",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",
+      "distance(thumbRight, middleRight) < 0.05",
+      "distance(thumbRight, ringRight) < 0.05",
+      "distance(thumbRight, pinkyRight) < 0.05",
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+  
+      "distance(wristRight, rightShoulder) < 0.2",
+      "wristRight.y > rightShoulder.y",
+      "wristRight.y > chestCenter.y - 0.1",
+      "palmRightDown == true",
+  
+      "!distance(thumbLeft, indexLeft) < 0.05",
+      "!distance(wristLeft, chestCenter) < 0.2",
+      "!palmLeftDown == false"
+    ]
+  },
+  {
+    "word": "เหมาะสม",
+    "meaning": "แสดงถึงความพอดี ความเหมาะสม",
+    "conditions": [
+      "distance(indexRight, indexLeft) < 0.05",               
+      "indexRight.y < middleRight.y",                         
+      "indexLeft.y < middleLeft.y",                           
+      "distance(thumbRight, indexRight) > 0.05",              
+      "distance(thumbLeft, indexLeft) > 0.05",                
+      "distance(middleRight, wristRight) < 0.1",             
+      "distance(middleLeft, wristLeft) < 0.1",                
+      "distance(ringRight, wristRight) < 0.1",               
+      "distance(ringLeft, wristLeft) < 0.1",                  
+      "distance(pinkyRight, wristRight) < 0.1",               
+      "distance(pinkyLeft, wristLeft) < 0.1",                 
+      "indexRight.y < wristRight.y",                          
+      "indexLeft.y < wristLeft.y",   
+      "wristRight.x > 0.7",
+                          
+      "!distance(thumbRight, indexRight) < 0.03",             
+      "!distance(indexRight, middleRight) < 0.01",            
+      "!distance(indexLeft, middleLeft) < 0.01",              
+      "!palmRightDown == false",                              
+      "!palmLeftDown == false"                          
+    ]
+  },
+  {
+    "word": "ทำไม",
+    "meaning": "ใช้เพื่อถามเหตุผลหรือสาเหตุ",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.05",
+      "distance(pinkyRight, ringRight) > 0.05",
+  
+      "distance(indexRight, middleRight) < 0.03",
+      "distance(middleRight, ringRight) < 0.03",
+      "distance(indexRight, ringRight) < 0.04",
+
+      "wristRight.y < mouthCenter.y",
+      "distance(wristRight, mouthCenter) < 0.15",
+
+      "palmRightDown == false",
+
+      "!distance(indexLeft, indexRight) < 0.1",
+      "!palmLeftDown == false",
+
+      "!distance(indexRight, middleRight) > 0.05"
+    ]
+  },
+  {
+    "word": "ดิน",
+    "meaning": "พื้นผิวของโลก ใช้ปลูกพืช เป็นต้น",
+    "conditions": [
+      "distance(indexRight, thumbRight) < 0.04",
+      "distance(middleRight, thumbRight) < 0.04",
+      "distance(ringRight, thumbRight) < 0.04",
+      "distance(pinkyRight, thumbRight) < 0.04",
+      "distance(indexLeft, thumbLeft) < 0.04",
+      "distance(middleLeft, thumbLeft) < 0.04",
+      "distance(ringLeft, thumbLeft) < 0.04",
+      "distance(pinkyLeft, thumbLeft) < 0.04",
+      "wristRight.y > nose.y",
+      "wristLeft.y > nose.y"
+    ]
+  },
+  {
+    "word": "สีแดง",
+    "meaning": "สีของวัตถุที่มีลักษณะคล้ายสีเลือด",
+    "conditions": [
+      "distance(thumbRight, indexRight) < 0.05",  
+      "distance(indexRight, middleRight) > 0.05", 
+      "distance(middleRight, ringRight) > 0.05",  
+      "distance(ringRight, pinkyRight) > 0.05",   
+      "wristRight.x < nose.x", 
+      "wristRight.y > nose.y", 
+      "distance(indexRight, nose) < 0.1", 
+      "indexRight.y > nose.y", 
+      "indexRight.y < mouthCenter.y" 
+    ]
+  },
+  {
+    "word": "ไม่ดี",
+    "meaning": "แสดงความไม่เห็นด้วย หรือบอกว่าบางอย่างไม่ดี",
+    "conditions": [
+      "distance(pinkyRight, ringRight) > 0.06",
+      "distance(indexRight, middleRight) < 0.03",
+      "distance(middleRight, ringRight) < 0.03",
+      "distance(thumbRight, indexRight) < 0.03",
+      
+      "palmRightDown == false",
+      "pinkyRight.y < wristRight.y",
+      "wristRight.y > 0.6",
+      "pinkyRight.y > middleRight.y",
+      
+      "!distance(pinkyLeft, ringLeft) > 0.04",
+      "!palmLeftDown == false",
+      "!distance(thumbLeft, indexLeft) < 0.05",
+      "!distance(thumbLeft, pinkyLeft) > 0.05",
+      "!distance(indexRight, nose) < 0.1"
+    ]
+  },
+  {
+    "word": "หนาว(ง่าย)",
+    "meaning": "อาการรู้สึกเย็นหรือสั่น",
+    "conditions": [
+      "distance(indexRight, middleRight) < 0.05",
+      "distance(middleRight, ringRight) < 0.05",
+      "distance(ringRight, pinkyRight) < 0.05",
+      "distance(indexLeft, middleLeft) < 0.05",
+      "distance(middleLeft, ringLeft) < 0.05",
+      "distance(ringLeft, pinkyLeft) < 0.05"
+    ]
+  },
+  {
+    "word": "ชื่นชม",
+    "meaning": "การยกย่องหรือแสดงความพอใจ",
+    "conditions": [
+      "distance(thumbRight, indexRight) > 0.07",
+      "distance(thumbLeft, indexLeft) > 0.07",
+
+      "distance(indexRight, middleRight) < 0.04",
+      "distance(middleRight, ringRight) < 0.04",
+      "distance(ringRight, pinkyRight) < 0.04",
+
+      "distance(indexLeft, middleLeft) < 0.04",
+      "distance(middleLeft, ringLeft) < 0.04",
+      "distance(ringLeft, pinkyLeft) < 0.04"
+    ]
+  }
+
+] 

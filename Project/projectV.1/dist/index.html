@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Holistic Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <video class="input_video" autoplay></video> <!-- ตั้งค่าให้เล่นอัตโนมัติ -->
+        <div class="canvas-container">
+            <canvas class="output_canvas" width="1280" height="720"></canvas> <!-- ปรับขนาดเป็นตัวเลขแทน 'px' -->
+        </div>
+    </div>
+    <div class="control-panel"></div>
+
+    <!-- แสดงผลข้อความ -->
+    <div id="outputText" style="color: white; font-size: 24px; position: absolute; top: 10px; left: 10px;"></div>
+
+    <!-- โหลด MediaPipe Holistic -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@latest/holistic.js"></script>
+
+    <!-- โหลด Camera Utilities -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- โหลด TensorFlow JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+
+    <!-- โหลด JS ของคุณ -->
+    <script type="module" src="record_data.js"></script> 
+</body>
+</html>
